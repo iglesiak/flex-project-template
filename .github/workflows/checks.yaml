@@ -13,9 +13,6 @@ on:
     paths:
       - 'plugin-flex-ts-template-v2/**'
       - 'serverless-functions/**'
-# FEATURE: schedule-manager
-      - 'serverless-schedule-manager/**'
-# END FEATURE: schedule-manager
   # Enable running this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -39,11 +36,6 @@ jobs:
           npm install
           cd ../serverless-functions
           npm install
-# FEATURE: schedule-manager
-      - name: Install schedule manager packages
-        working-directory: serverless-schedule-manager
-        run: npm install
-# END FEATURE: schedule-manager
       - name: Run eslint
         run: npm run lint:report
         continue-on-error: true
